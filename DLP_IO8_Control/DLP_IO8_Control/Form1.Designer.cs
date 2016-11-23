@@ -34,6 +34,9 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.labelValue = new System.Windows.Forms.Label();
+            this.cBoxSerialPort = new System.Windows.Forms.ComboBox();
+            this.btnManager = new System.Windows.Forms.Button();
+            this.btnConect = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonStart
@@ -58,7 +61,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(197, 12);
+            this.btnRefresh.Location = new System.Drawing.Point(125, 39);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 2;
@@ -75,11 +78,42 @@
             this.labelValue.TabIndex = 3;
             this.labelValue.Text = "label1";
             // 
+            // cBoxSerialPort
+            // 
+            this.cBoxSerialPort.FormattingEnabled = true;
+            this.cBoxSerialPort.Location = new System.Drawing.Point(12, 41);
+            this.cBoxSerialPort.Name = "cBoxSerialPort";
+            this.cBoxSerialPort.Size = new System.Drawing.Size(107, 21);
+            this.cBoxSerialPort.TabIndex = 4;
+            // 
+            // btnManager
+            // 
+            this.btnManager.Location = new System.Drawing.Point(12, 12);
+            this.btnManager.Name = "btnManager";
+            this.btnManager.Size = new System.Drawing.Size(107, 23);
+            this.btnManager.TabIndex = 5;
+            this.btnManager.Text = "Open Manager";
+            this.btnManager.UseVisualStyleBackColor = true;
+            this.btnManager.Click += new System.EventHandler(this.btnManager_Click);
+            // 
+            // btnConect
+            // 
+            this.btnConect.Location = new System.Drawing.Point(125, 12);
+            this.btnConect.Name = "btnConect";
+            this.btnConect.Size = new System.Drawing.Size(75, 23);
+            this.btnConect.TabIndex = 6;
+            this.btnConect.Text = "Conect";
+            this.btnConect.UseVisualStyleBackColor = true;
+            this.btnConect.Click += new System.EventHandler(this.btnConect_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.btnConect);
+            this.Controls.Add(this.btnManager);
+            this.Controls.Add(this.cBoxSerialPort);
             this.Controls.Add(this.labelValue);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.buttonStop);
@@ -98,6 +132,9 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.IO.Ports.SerialPort serialPort;
         private System.Windows.Forms.Label labelValue;
+        private System.Windows.Forms.ComboBox cBoxSerialPort;
+        private System.Windows.Forms.Button btnManager;
+        private System.Windows.Forms.Button btnConect;
     }
 }
 

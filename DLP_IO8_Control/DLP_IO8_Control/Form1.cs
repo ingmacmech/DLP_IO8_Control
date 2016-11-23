@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using System.IO.Ports;
 
 namespace DLP_IO8_Control
 {
     public partial class Form1 : Form
     {
+        private SerialPort sPort = new SerialPort(); 
         bool keepGoing = true;
         string value;
+
 
 
 
@@ -28,14 +31,14 @@ namespace DLP_IO8_Control
         {
             ToggleState();
 
-            serialPort.Close();
+            sPort.Close();
 
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
             ToggleState();
-            serialPort.Open();
+            sPort.Open();
             //serialPort.WriteLine("\\");
             //serialPort.WriteLine("'");
             StartRead();
@@ -67,10 +70,10 @@ namespace DLP_IO8_Control
             // Loop until stopped or the number reaches its maximum value  
             while (keepGoing)
             {
-                serialPort.WriteLine("X");
+                sPort.WriteLine("X");
                 try
                 {
-                    value = serialPort.ReadLine();
+                    value = sPort.ReadLine();
                     //label5.Invoke((MethodInvoker)(() => label5.Text = "Requested" + repeats + "Times"));
                     labelValue.Invoke((MethodInvoker)(() => labelValue.Text = value));
                 }
@@ -83,15 +86,44 @@ namespace DLP_IO8_Control
 
         private void initSerial()
         {
-            serialPort.PortName = "COM7";
-            serialPort.BaudRate = 115200;
-            serialPort.ReadTimeout = 50;
-            serialPort.WriteTimeout = 50;
+            sPort.PortName = "COM7";
+            sPort.BaudRate = 115200;
+            sPort.ReadTimeout = 50;
+            sPort.WriteTimeout = 50;
+        }
+
+        private void SearchPorts()
+        {
+            string[] ports = SerialPort.GetPortNames();
+
+            cBoxSerialPort.Items.Clear();
+            foreach (string port in ports)
+            {
+                cBoxSerialPort.Items.Add(port);
+            }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+            SearchPorts();
+        }
+
+        private void btnManager_Click(object sender, EventArgs e)
+        {
+            // Open Device Manager
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            process.StartInfo.FileName = "devmgmt.msc";
+            process.Start();
+        }
+
+        private void btnConect_Click(object sender, EventArgs e)
+        {
 
         }
+
+        
+
+        
+
     }
 }
