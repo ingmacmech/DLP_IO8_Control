@@ -86,10 +86,37 @@ namespace DLP_IO8_Control
 
         private void initSerial()
         {
-            sPort.PortName = "COM7";
-            sPort.BaudRate = 115200;
-            sPort.ReadTimeout = 50;
-            sPort.WriteTimeout = 50;
+            if (!sPort.IsOpen)
+            {
+                sPort.BaudRate = 115200;
+                sPort.Parity = Parity.None;
+                sPort.DataBits = 8;
+                sPort.StopBits = StopBits.One;
+
+                try
+                {
+                    sPort.PortName = this.cBoxSerialPort.GetItemText(this.cBoxSerialPort.SelectedItem);
+
+                    try
+                    {
+                        sPort.Open();
+                        btnConect.Text = "Disconect";
+                    }
+                    catch
+                    {
+                        MessageBox.Show("COM port not available!");
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("No COM port selected!");
+                }
+            }
+            else
+            {
+                sPort.Close();
+                btnConect.Text = "Conect";
+            }
         }
 
         private void SearchPorts()
@@ -118,6 +145,7 @@ namespace DLP_IO8_Control
 
         private void btnConect_Click(object sender, EventArgs e)
         {
+            initSerial();
 
         }
 

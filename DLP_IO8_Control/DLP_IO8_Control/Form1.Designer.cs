@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.buttonStart = new System.Windows.Forms.Button();
             this.buttonStop = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.labelValue = new System.Windows.Forms.Label();
             this.cBoxSerialPort = new System.Windows.Forms.ComboBox();
             this.btnManager = new System.Windows.Forms.Button();
@@ -130,7 +128,6 @@
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.Button buttonStop;
         private System.Windows.Forms.Button btnRefresh;
-        private System.IO.Ports.SerialPort serialPort;
         private System.Windows.Forms.Label labelValue;
         private System.Windows.Forms.ComboBox cBoxSerialPort;
         private System.Windows.Forms.Button btnManager;
