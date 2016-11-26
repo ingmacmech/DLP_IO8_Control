@@ -23,8 +23,7 @@ namespace DLP_IO8_Control
         public Form1()
         {
             InitializeComponent();
-            ToggleState();
-            initSerial();
+            ToggleState();            
         }
 
         private void buttonStop_Click(object sender, EventArgs e)
@@ -38,9 +37,6 @@ namespace DLP_IO8_Control
         private void buttonStart_Click(object sender, EventArgs e)
         {
             ToggleState();
-            sPort.Open();
-            //serialPort.WriteLine("\\");
-            //serialPort.WriteLine("'");
             StartRead();
         }
 
