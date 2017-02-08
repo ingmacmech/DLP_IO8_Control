@@ -42,7 +42,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.rBtnCelsius = new System.Windows.Forms.RadioButton();
             this.rBtnFarenheit = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.gBoxOptions.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonStart
@@ -114,15 +118,13 @@
             // 
             // gBoxOptions
             // 
-            this.gBoxOptions.Controls.Add(this.rBtnFarenheit);
-            this.gBoxOptions.Controls.Add(this.rBtnCelsius);
+            this.gBoxOptions.Controls.Add(this.panel2);
+            this.gBoxOptions.Controls.Add(this.panel1);
             this.gBoxOptions.Controls.Add(this.label2);
             this.gBoxOptions.Controls.Add(this.label1);
-            this.gBoxOptions.Controls.Add(this.rBtnBinary);
-            this.gBoxOptions.Controls.Add(this.rBtnASCII);
             this.gBoxOptions.Location = new System.Drawing.Point(218, 12);
             this.gBoxOptions.Name = "gBoxOptions";
-            this.gBoxOptions.Size = new System.Drawing.Size(229, 50);
+            this.gBoxOptions.Size = new System.Drawing.Size(229, 61);
             this.gBoxOptions.TabIndex = 7;
             this.gBoxOptions.TabStop = false;
             this.gBoxOptions.Text = "Options";
@@ -130,7 +132,7 @@
             // rBtnASCII
             // 
             this.rBtnASCII.AutoSize = true;
-            this.rBtnASCII.Location = new System.Drawing.Point(92, 15);
+            this.rBtnASCII.Location = new System.Drawing.Point(4, 4);
             this.rBtnASCII.Name = "rBtnASCII";
             this.rBtnASCII.Size = new System.Drawing.Size(52, 17);
             this.rBtnASCII.TabIndex = 0;
@@ -141,7 +143,7 @@
             // rBtnBinary
             // 
             this.rBtnBinary.AutoSize = true;
-            this.rBtnBinary.Location = new System.Drawing.Point(154, 15);
+            this.rBtnBinary.Location = new System.Drawing.Point(66, 3);
             this.rBtnBinary.Name = "rBtnBinary";
             this.rBtnBinary.Size = new System.Drawing.Size(56, 17);
             this.rBtnBinary.TabIndex = 1;
@@ -161,7 +163,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 33);
+            this.label2.Location = new System.Drawing.Point(7, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 13);
             this.label2.TabIndex = 3;
@@ -170,7 +172,7 @@
             // rBtnCelsius
             // 
             this.rBtnCelsius.AutoSize = true;
-            this.rBtnCelsius.Location = new System.Drawing.Point(92, 32);
+            this.rBtnCelsius.Location = new System.Drawing.Point(3, 3);
             this.rBtnCelsius.Name = "rBtnCelsius";
             this.rBtnCelsius.Size = new System.Drawing.Size(58, 17);
             this.rBtnCelsius.TabIndex = 4;
@@ -181,13 +183,31 @@
             // rBtnFarenheit
             // 
             this.rBtnFarenheit.AutoSize = true;
-            this.rBtnFarenheit.Location = new System.Drawing.Point(154, 31);
+            this.rBtnFarenheit.Location = new System.Drawing.Point(63, 4);
             this.rBtnFarenheit.Name = "rBtnFarenheit";
             this.rBtnFarenheit.Size = new System.Drawing.Size(69, 17);
             this.rBtnFarenheit.TabIndex = 5;
             this.rBtnFarenheit.TabStop = true;
             this.rBtnFarenheit.Text = "Farenheit";
             this.rBtnFarenheit.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.rBtnASCII);
+            this.panel1.Controls.Add(this.rBtnBinary);
+            this.panel1.Location = new System.Drawing.Point(90, 10);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(131, 24);
+            this.panel1.TabIndex = 8;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.rBtnCelsius);
+            this.panel2.Controls.Add(this.rBtnFarenheit);
+            this.panel2.Location = new System.Drawing.Point(90, 31);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(131, 24);
+            this.panel2.TabIndex = 9;
             // 
             // Form1
             // 
@@ -206,6 +226,10 @@
             this.Text = "Form1";
             this.gBoxOptions.ResumeLayout(false);
             this.gBoxOptions.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,6 +251,8 @@
         private System.Windows.Forms.RadioButton rBtnCelsius;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 
