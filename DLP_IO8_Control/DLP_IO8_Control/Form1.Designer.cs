@@ -35,6 +35,14 @@
             this.cBoxSerialPort = new System.Windows.Forms.ComboBox();
             this.btnManager = new System.Windows.Forms.Button();
             this.btnConect = new System.Windows.Forms.Button();
+            this.gBoxOptions = new System.Windows.Forms.GroupBox();
+            this.rBtnASCII = new System.Windows.Forms.RadioButton();
+            this.rBtnBinary = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.rBtnCelsius = new System.Windows.Forms.RadioButton();
+            this.rBtnFarenheit = new System.Windows.Forms.RadioButton();
+            this.gBoxOptions.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonStart
@@ -70,7 +78,7 @@
             // labelValue
             // 
             this.labelValue.AutoSize = true;
-            this.labelValue.Location = new System.Drawing.Point(22, 90);
+            this.labelValue.Location = new System.Drawing.Point(48, 136);
             this.labelValue.Name = "labelValue";
             this.labelValue.Size = new System.Drawing.Size(35, 13);
             this.labelValue.TabIndex = 3;
@@ -104,11 +112,89 @@
             this.btnConect.UseVisualStyleBackColor = true;
             this.btnConect.Click += new System.EventHandler(this.btnConect_Click);
             // 
+            // gBoxOptions
+            // 
+            this.gBoxOptions.Controls.Add(this.rBtnFarenheit);
+            this.gBoxOptions.Controls.Add(this.rBtnCelsius);
+            this.gBoxOptions.Controls.Add(this.label2);
+            this.gBoxOptions.Controls.Add(this.label1);
+            this.gBoxOptions.Controls.Add(this.rBtnBinary);
+            this.gBoxOptions.Controls.Add(this.rBtnASCII);
+            this.gBoxOptions.Location = new System.Drawing.Point(218, 12);
+            this.gBoxOptions.Name = "gBoxOptions";
+            this.gBoxOptions.Size = new System.Drawing.Size(229, 50);
+            this.gBoxOptions.TabIndex = 7;
+            this.gBoxOptions.TabStop = false;
+            this.gBoxOptions.Text = "Options";
+            // 
+            // rBtnASCII
+            // 
+            this.rBtnASCII.AutoSize = true;
+            this.rBtnASCII.Location = new System.Drawing.Point(92, 15);
+            this.rBtnASCII.Name = "rBtnASCII";
+            this.rBtnASCII.Size = new System.Drawing.Size(52, 17);
+            this.rBtnASCII.TabIndex = 0;
+            this.rBtnASCII.TabStop = true;
+            this.rBtnASCII.Text = "ASCII";
+            this.rBtnASCII.UseVisualStyleBackColor = true;
+            // 
+            // rBtnBinary
+            // 
+            this.rBtnBinary.AutoSize = true;
+            this.rBtnBinary.Location = new System.Drawing.Point(154, 15);
+            this.rBtnBinary.Name = "rBtnBinary";
+            this.rBtnBinary.Size = new System.Drawing.Size(56, 17);
+            this.rBtnBinary.TabIndex = 1;
+            this.rBtnBinary.TabStop = true;
+            this.rBtnBinary.Text = "Binariy";
+            this.rBtnBinary.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Return Value in:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Return Value in:";
+            // 
+            // rBtnCelsius
+            // 
+            this.rBtnCelsius.AutoSize = true;
+            this.rBtnCelsius.Location = new System.Drawing.Point(92, 32);
+            this.rBtnCelsius.Name = "rBtnCelsius";
+            this.rBtnCelsius.Size = new System.Drawing.Size(58, 17);
+            this.rBtnCelsius.TabIndex = 4;
+            this.rBtnCelsius.TabStop = true;
+            this.rBtnCelsius.Text = "Celsius";
+            this.rBtnCelsius.UseVisualStyleBackColor = true;
+            // 
+            // rBtnFarenheit
+            // 
+            this.rBtnFarenheit.AutoSize = true;
+            this.rBtnFarenheit.Location = new System.Drawing.Point(154, 31);
+            this.rBtnFarenheit.Name = "rBtnFarenheit";
+            this.rBtnFarenheit.Size = new System.Drawing.Size(69, 17);
+            this.rBtnFarenheit.TabIndex = 5;
+            this.rBtnFarenheit.TabStop = true;
+            this.rBtnFarenheit.Text = "Farenheit";
+            this.rBtnFarenheit.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(541, 462);
+            this.Controls.Add(this.gBoxOptions);
             this.Controls.Add(this.btnConect);
             this.Controls.Add(this.btnManager);
             this.Controls.Add(this.cBoxSerialPort);
@@ -118,6 +204,8 @@
             this.Controls.Add(this.buttonStart);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.gBoxOptions.ResumeLayout(false);
+            this.gBoxOptions.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,6 +220,13 @@
         private System.Windows.Forms.ComboBox cBoxSerialPort;
         private System.Windows.Forms.Button btnManager;
         private System.Windows.Forms.Button btnConect;
+        private System.Windows.Forms.GroupBox gBoxOptions;
+        private System.Windows.Forms.RadioButton rBtnASCII;
+        private System.Windows.Forms.RadioButton rBtnBinary;
+        private System.Windows.Forms.RadioButton rBtnFarenheit;
+        private System.Windows.Forms.RadioButton rBtnCelsius;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 
